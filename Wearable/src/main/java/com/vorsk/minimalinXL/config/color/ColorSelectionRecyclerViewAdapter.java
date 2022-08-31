@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.vorsk.minimalin.config.color;
+package com.vorsk.minimalinXL.config.color;
 
 import android.app.Activity;
 import android.content.Context;
@@ -26,8 +26,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.vorsk.minimalin.MaterialColors;
-import com.vorsk.minimalin.R;
+import com.vorsk.minimalinXL.MaterialColors;
+import com.vorsk.minimalinXL.R;
 
 /**
  * Provides a binding from color selection data set to views that are displayed within

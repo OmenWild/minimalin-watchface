@@ -1,4 +1,4 @@
-package com.vorsk.minimalin.config;
+package com.vorsk.minimalinXL.config;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,12 +9,12 @@ import android.support.wearable.complications.ComplicationProviderInfo;
 import android.support.wearable.complications.ProviderChooserIntent;
 import android.util.Log;
 
-import com.vorsk.minimalin.R;
-import com.vorsk.minimalin.model.ConfigData;
+import com.vorsk.minimalinXL.R;
+import com.vorsk.minimalinXL.model.ConfigData;
 
 
 /**
- * The watch-side config_list activity for {@link com.vorsk.minimalin.watchface.MinimalinWatchFaceService}, which
+ * The watch-side config_list activity for {@link com.vorsk.minimalinXL.watchface.MinimalinXLWatchFaceService}, which
  * allows for setting the left and right complications of watch face along with the second's marker
  * color, background color, unread notifications toggle, and background complication image.
  */

@@ -13,14 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.vorsk.minimalin.config.color;
+package com.vorsk.minimalinXL.config.color;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.wear.widget.WearableLinearLayoutManager;
 import android.support.wear.widget.WearableRecyclerView;
 
-import com.vorsk.minimalin.R;
+import com.vorsk.minimalinXL.R;
 
 /**
  * Allows user to select color for something on the watch face (background, highlight,etc.) and

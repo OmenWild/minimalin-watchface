@@ -1,4 +1,4 @@
-package com.vorsk.minimalin.watchface;
+package com.vorsk.minimalinXL.watchface;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -23,18 +23,18 @@ import android.util.Log;
 import android.util.SparseArray;
 import android.view.SurfaceHolder;
 
-import com.vorsk.minimalin.MaterialColors;
-import com.vorsk.minimalin.R;
-import com.vorsk.minimalin.config.ConfigRecyclerViewAdapter;
-import com.vorsk.minimalin.model.ConfigData;
+import com.vorsk.minimalinXL.MaterialColors;
+import com.vorsk.minimalinXL.R;
+import com.vorsk.minimalinXL.config.ConfigRecyclerViewAdapter;
+import com.vorsk.minimalinXL.model.ConfigData;
 
 import java.util.Calendar;
 import java.util.TimeZone;
 import java.util.concurrent.TimeUnit;
 
 
-public class MinimalinWatchFaceService extends CanvasWatchFaceService {
-    private static final String TAG = "MinimalinWatchFaceService";
+public class MinimalinXLWatchFaceService extends CanvasWatchFaceService {
+    private static final String TAG = "MinimalinXLWatchFaceService";
 
     // Unique IDs for each complication. The settings activity that supports allowing users
     // to select their complication data provider requires numbers to be >= 0.
@@ -291,7 +291,7 @@ public class MinimalinWatchFaceService extends CanvasWatchFaceService {
             mCalendar = Calendar.getInstance();
 
             setWatchFaceStyle(
-                    new WatchFaceStyle.Builder(MinimalinWatchFaceService.this)
+                    new WatchFaceStyle.Builder(MinimalinXLWatchFaceService.this)
                             .setAcceptsTapEvents(true)
                             .setHideNotificationIndicator(true) // unread top indicator
                             .setShowUnreadCountIndicator(false) // unread count #
@@ -748,9 +748,14 @@ public class MinimalinWatchFaceService extends CanvasWatchFaceService {
              */
 
             // For most Wear devices, width and height are the same, so we just chose one (width).
-            int sizeOfComplication = width / 5;
-            int sizeOfLongComplicationWidth = width / 2;
-            int sizeOfLongComplicationHeight = height / 6;
+//            int sizeOfComplication = width / 5;
+//            int sizeOfLongComplicationWidth = width / 2;
+//            int sizeOfLongComplicationHeight = height / 6;
+
+            // int a = (int) Math.round(6.14); // 3
+            int sizeOfComplication = getResources().getDimensionPixelSize(R.dimen.complication_preview_size);
+            int sizeOfLongComplicationWidth = getResources().getDimensionPixelSize(R.dimen.complication_big_preview_width);
+            int sizeOfLongComplicationHeight = getResources().getDimensionPixelSize(R.dimen.complication_big_preview_height);
 
             int midpointOfScreen = width / 2;
 
@@ -1075,7 +1080,7 @@ public class MinimalinWatchFaceService extends CanvasWatchFaceService {
             }
             mRegisteredTimeZoneReceiver = true;
             IntentFilter filter = new IntentFilter(Intent.ACTION_TIMEZONE_CHANGED);
-            MinimalinWatchFaceService.this.registerReceiver(mTimeZoneReceiver, filter);
+            MinimalinXLWatchFaceService.this.registerReceiver(mTimeZoneReceiver, filter);
         }
 
         private void unregisterReceiver() {
@@ -1083,7 +1088,7 @@ public class MinimalinWatchFaceService extends CanvasWatchFaceService {
                 return;
             }
             mRegisteredTimeZoneReceiver = false;
-            MinimalinWatchFaceService.this.unregisterReceiver(mTimeZoneReceiver);
+            MinimalinXLWatchFaceService.this.unregisterReceiver(mTimeZoneReceiver);
         }
 
         /**

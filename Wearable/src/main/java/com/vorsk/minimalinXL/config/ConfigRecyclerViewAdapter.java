@@ -1,4 +1,4 @@
-package com.vorsk.minimalin.config;
+package com.vorsk.minimalinXL.config;
 
 import android.app.Activity;
 import android.content.ComponentName;
@@ -22,19 +22,19 @@ import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.Toast;
 
-import com.vorsk.minimalin.R;
-import com.vorsk.minimalin.config.color.ColorSelectionActivity;
-import com.vorsk.minimalin.model.ConfigData.ColorConfigItem;
-import com.vorsk.minimalin.model.ConfigData.ComplicationSwitchConfigItem;
-import com.vorsk.minimalin.model.ConfigData.ComplicationsConfigItem;
-import com.vorsk.minimalin.model.ConfigData.ConfigItemType;
-import com.vorsk.minimalin.model.ConfigData.SwitchConfigItem;
-import com.vorsk.minimalin.watchface.MinimalinWatchFaceService;
+import com.vorsk.minimalinXL.R;
+import com.vorsk.minimalinXL.config.color.ColorSelectionActivity;
+import com.vorsk.minimalinXL.model.ConfigData.ColorConfigItem;
+import com.vorsk.minimalinXL.model.ConfigData.ComplicationSwitchConfigItem;
+import com.vorsk.minimalinXL.model.ConfigData.ComplicationsConfigItem;
+import com.vorsk.minimalinXL.model.ConfigData.ConfigItemType;
+import com.vorsk.minimalinXL.model.ConfigData.SwitchConfigItem;
+import com.vorsk.minimalinXL.watchface.MinimalinXLWatchFaceService;
 
 import java.util.ArrayList;
 import java.util.concurrent.Executors;
 
-import static com.vorsk.minimalin.config.color.ColorSelectionActivity.EXTRA_SHARED_PREF;
+import static com.vorsk.minimalinXL.config.color.ColorSelectionActivity.EXTRA_SHARED_PREF;
 
 /**
  * Displays different layouts for configuring watch face's complications and appearance settings
@@ -93,13 +93,13 @@ public class ConfigRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView
         mSelectedComplicationId = -1;
 
         mLeftComplicationId =
-                MinimalinWatchFaceService.getComplicationId(ComplicationLocation.LEFT);
+                MinimalinXLWatchFaceService.getComplicationId(ComplicationLocation.LEFT);
         mRightComplicationId =
-                MinimalinWatchFaceService.getComplicationId(ComplicationLocation.RIGHT);
+                MinimalinXLWatchFaceService.getComplicationId(ComplicationLocation.RIGHT);
         mTopComplicationId =
-                MinimalinWatchFaceService.getComplicationId(ComplicationLocation.TOP);
+                MinimalinXLWatchFaceService.getComplicationId(ComplicationLocation.TOP);
         mBottomComplicationId =
-                MinimalinWatchFaceService.getComplicationId(ComplicationLocation.BOTTOM);
+                MinimalinXLWatchFaceService.getComplicationId(ComplicationLocation.BOTTOM);
 
         mSharedPref =
                 context.getSharedPreferences(
@@ -285,7 +285,7 @@ public class ConfigRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView
     }
 
     /**
-     * Used by associated watch face ({@link MinimalinWatchFaceService}) to let this
+     * Used by associated watch face ({@link MinimalinXLWatchFaceService}) to let this
      * adapter know which complication locations are supported, their ids, and supported
      * complication data types.
      */
@@ -377,17 +377,17 @@ public class ConfigRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView
                 Activity currentActivity, ComplicationLocation complicationLocation) {
 
             mSelectedComplicationId =
-                    MinimalinWatchFaceService.getComplicationId(complicationLocation);
+                    MinimalinXLWatchFaceService.getComplicationId(complicationLocation);
 
             if (mSelectedComplicationId >= 0) {
 
                 int[] supportedTypes =
-                        MinimalinWatchFaceService.getSupportedComplicationTypes(
+                        MinimalinXLWatchFaceService.getSupportedComplicationTypes(
                                 complicationLocation);
 
                 ComponentName watchFace =
                         new ComponentName(
-                                currentActivity, MinimalinWatchFaceService.class);
+                                currentActivity, MinimalinXLWatchFaceService.class);
 
                 currentActivity.startActivityForResult(
                         ComplicationHelperActivity.createProviderChooserHelperIntent(
@@ -452,7 +452,7 @@ public class ConfigRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView
         }
 
         void initializesColorsAndComplications() {
-            final int[] complicationIds = MinimalinWatchFaceService.getComplicationIds();
+            final int[] complicationIds = MinimalinXLWatchFaceService.getComplicationIds();
 
             mProviderInfoRetriever.retrieveProviderInfo(
                     new OnProviderInfoReceivedCallback() {
@@ -561,18 +561,18 @@ public class ConfigRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView
 
                 // start intent to select complication
                 mSelectedComplicationId =
-                        MinimalinWatchFaceService.getComplicationId(
+                        MinimalinXLWatchFaceService.getComplicationId(
                                 complicationID);
 
                 if (mSelectedComplicationId >= 0) {
 
                     int[] supportedTypes =
-                            MinimalinWatchFaceService.getSupportedComplicationTypes(
+                            MinimalinXLWatchFaceService.getSupportedComplicationTypes(
                                     complicationID);
 
                     ComponentName watchFace =
                             new ComponentName(
-                                    currentActivity, MinimalinWatchFaceService.class);
+                                    currentActivity, MinimalinXLWatchFaceService.class);
 
                     currentActivity.startActivityForResult(
                             ComplicationHelperActivity.createProviderChooserHelperIntent(

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.vorsk.minimalin">
+    package="com.vorsk.minimalinXL">
 
     <uses-feature android:name="android.hardware.type.watch" />
 
@@ -22,7 +22,7 @@
             android:value="@integer/google_play_services_version" />
 
         <service
-            android:name=".watchface.MinimalinWatchFaceService"
+            android:name=".watchface.MinimalinXLWatchFaceService"
             android:enabled="true"
             android:label="@string/watchface_name"
             android:permission="android.permission.BIND_WALLPAPER">
@@ -37,7 +37,7 @@
                 android:resource="@drawable/preview_round" />
             <meta-data
                 android:name="com.google.android.wearable.watchface.wearableConfigurationAction"
-                android:value="com.vorsk.minimalin.watchface.CONFIG_COMPLICATION" />
+                android:value="com.vorsk.minimalinXL.watchface.CONFIG_COMPLICATION" />
 
             <intent-filter>
                 <action android:name="android.service.wallpaper.WallpaperService" />
@@ -51,7 +51,7 @@
             android:name=".config.ConfigActivity"
             android:label="@string/complication_config">
             <intent-filter>
-                <action android:name="com.vorsk.minimalin.watchface.CONFIG_COMPLICATION" />
+                <action android:name="com.vorsk.minimalinXL.watchface.CONFIG_COMPLICATION" />
 
                 <category android:name="com.google.android.wearable.watchface.category.WEARABLE_CONFIGURATION" />
                 <category android:name="android.intent.category.DEFAULT" />

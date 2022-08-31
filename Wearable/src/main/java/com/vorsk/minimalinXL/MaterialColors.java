@@ -1,4 +1,4 @@
-package com.vorsk.minimalin;
+package com.vorsk.minimalinXL;
 
 public class MaterialColors {
 

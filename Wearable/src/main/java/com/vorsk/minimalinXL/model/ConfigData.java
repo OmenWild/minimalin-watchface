@@ -1,4 +1,4 @@
-package com.vorsk.minimalin.model;
+package com.vorsk.minimalinXL.model;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -6,18 +6,18 @@ import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.support.wearable.complications.ComplicationData;
 import android.support.wearable.complications.SystemProviders;
 
-import com.vorsk.minimalin.MaterialColors;
-import com.vorsk.minimalin.R;
-import com.vorsk.minimalin.config.ConfigActivity;
-import com.vorsk.minimalin.config.ConfigRecyclerViewAdapter;
-import com.vorsk.minimalin.config.color.ColorSelectionActivity;
-import com.vorsk.minimalin.watchface.MinimalinWatchFaceService;
+import com.vorsk.minimalinXL.MaterialColors;
+import com.vorsk.minimalinXL.R;
+import com.vorsk.minimalinXL.config.ConfigActivity;
+import com.vorsk.minimalinXL.config.ConfigRecyclerViewAdapter;
+import com.vorsk.minimalinXL.config.color.ColorSelectionActivity;
+import com.vorsk.minimalinXL.watchface.MinimalinXLWatchFaceService;
 
 import java.util.ArrayList;
 
 /**
  * Data represents different views for configuring the
- * {@link MinimalinWatchFaceService} watch face's appearance and complications
+ * {@link MinimalinXLWatchFaceService} watch face's appearance and complications
  * via {@link ConfigActivity}.
  */
 public class ConfigData {
@@ -44,7 +44,7 @@ public class ConfigData {
      * Returns Watch Face Service class associated with configuration Activity.
      */
     public static Class getWatchFaceServiceClass() {
-        return MinimalinWatchFaceService.class;
+        return MinimalinXLWatchFaceService.class;
     }
 
     /**

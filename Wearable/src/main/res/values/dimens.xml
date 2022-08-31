@@ -10,9 +10,11 @@
     <dimen name="minimalin_font_size_bigger">24dp</dimen>
     <dimen name="minimalin_vertical_font_gap">4dp</dimen>
 
-    <dimen name="complication_preview_size">36dp</dimen>
+    <dimen name="complication_preview_size">72dp</dimen>
+
     <dimen name="complication_big_preview_width">72dp</dimen>
-    <dimen name="complication_big_preview_height">24dp</dimen>
+    <dimen name="complication_big_preview_height">48dp</dimen>
+
     <dimen name="complication_preview_margin_horizontal">32dp</dimen>
     <dimen name="complication_preview_margin_vertical">32dp</dimen>
 </resources>
